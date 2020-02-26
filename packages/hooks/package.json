@@ -1,0 +1,44 @@
+{
+  "name": "@react-keycloak/hooks",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "React hooks for Keycloak",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panz3r/react-keycloak.git"
+  },
+  "author": "Jannes Drijkoningen <jannes.drijkoningen@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/panz3r/react-keycloak/issues"
+  },
+  "homepage": "https://github.com/panz3r/react-keycloak#readme",
+  "keywords": [
+    "react",
+    "keycloak",
+    "keycloak-js"
+  ],
+  "main": "dist/lib/react-keycloak-hooks.js",
+  "module": "dist/es/react-keycloak-hooks.js",
+  "unpkg": "dist/umd/react-keycloak-hooks.min.js",
+  "types": "index.d.ts",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "prebuild": "npm run clean",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build && cp ../../LICENSE.md ."
+  },
+  "peerDependencies": {
+    "keycloak-js": ">=8.0.1 || >=9.0.0",
+    "react": ">=16.8"
+  },
+  "dependencies": {
+    "@react-keycloak/web": "file:../web"
+  }
+}
